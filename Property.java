@@ -75,10 +75,17 @@ public class Property {
     }
     }
 
+    
+    
+    
     @Override
     public String toString() {
         
-        return null;
+      String formato = "Descrição: " + getDescription() + "\n" + "Preco: "+getPrice() + " Euros";
+        return formato;
         
     }
+    
+    
+    
 }

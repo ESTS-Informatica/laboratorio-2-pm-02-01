@@ -56,4 +56,11 @@ public class PropertyTest
     
     
     }
+    
+    
+    @Test
+    public void testToString(){
+          Property property1 = new Property("T3 Monte Belo",150000.0);
+        System.out.println(property1.toString());        
+    }
 }
