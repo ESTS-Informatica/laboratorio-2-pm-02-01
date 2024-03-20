@@ -24,7 +24,12 @@ public class Company {
      * Constructor of class Company
      */
     public Company() {
-
+    
+    this.sells = new ArrayList();
+    this.sellers = new ArrayList();
+    this.clients = new ArrayList();
+    this.properties = new ArrayList();
+        
     }
 
     /**
@@ -33,7 +38,7 @@ public class Company {
      * @return This company clients.
      */
     public List<User> getClients() {
-        return null;         // dummy implementation
+        return this.clients;        
     }
 
     /**
@@ -42,7 +47,7 @@ public class Company {
      * @return This company sellers.
      */
     public List<User> getSellers() {
-        return null;         // dummy implementation
+        return this.sellers;        
     }
 
     /**
@@ -51,7 +56,7 @@ public class Company {
      * @return This company's properties.
      */
     public List<Property> getProperties() {
-        return null;         // dummy implementation
+        return this.properties;         
     }
 
     /**
@@ -60,7 +65,7 @@ public class Company {
      * @return This company sells.
      */
     public List<Sell> getSells() {
-        return null;         // dummy implementation
+        return this.sells;         
     }
 
     /**
@@ -70,6 +75,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerClient(User client) {
+        this.clients.add(client);
         return true;         // dummy implementation
     }
 
@@ -80,6 +86,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSeller(User seller) {
+        this.sellers.add(seller);
         return true;         // dummy implementation
     }
 
@@ -90,6 +97,7 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerProperty(Property property) {
+        this.properties.add(property);
         return true;         // dummy implementation
     }
 
@@ -100,7 +108,9 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSell(Sell sell) {
-        return true;         // dummy implementation
+        
+        this.sells.add(sell);
+        return true;        
     }
 
     /**
@@ -112,7 +122,8 @@ public class Company {
      * @return true If the request succeeds, false otherwise.
      */
     public boolean createSell(User client, User seller, Property property) {
-        return true;         // dummy implementation
+        registerSell(new Sell(client, seller ,property ));
+        return true;
     }
 
     /**
